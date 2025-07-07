@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -24,20 +25,44 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        primary: "#141413",
-        secondary: "#828179",
-        accent: "#8989DE",
+        primary: "#2D5016", // Deep forest green
+        secondary: "#8B7355", // Warm brown
+        accent: "#F59E0B", // Golden amber
         neutral: {
-          50: "#FAFAF8",
-          100: "#F0EFEA",
-          200: "#E6E4DD",
-          300: "#C4C3BB",
-          400: "#A3A299",
-          500: "#605F5B",
-          600: "#3A3935",
-          700: "#23241F",
-          800: "#191919",
-          900: "#141413",
+          50: "#FEFEFE", // Pure white
+          100: "#F8F6F3", // Cream white
+          200: "#F0EDE8", // Light beige
+          300: "#D4CFC7", // Warm beige
+          400: "#A8A196", // Light brown
+          500: "#736B5E", // Medium brown
+          600: "#5D5449", // Dark brown
+          700: "#3F3A32", // Deep brown
+          800: "#2B251F", // Very dark brown
+          900: "#1C1A16", // Almost black brown
+        },
+        green: {
+          50: "#F0FDF4",
+          100: "#DCFCE7",
+          200: "#BBF7D0",
+          300: "#86EFAC",
+          400: "#4ADE80",
+          500: "#22C55E",
+          600: "#16A34A", // Primary green
+          700: "#15803D",
+          800: "#166534",
+          900: "#14532D",
+        },
+        amber: {
+          50: "#FFFBEB",
+          100: "#FEF3C7",
+          200: "#FDE68A",
+          300: "#FCD34D",
+          400: "#FBBF24",
+          500: "#F59E0B", // Accent amber
+          600: "#D97706",
+          700: "#B45309",
+          800: "#92400E",
+          900: "#78350F",
         },
       },
       borderRadius: {
@@ -55,14 +80,43 @@ export default {
           to: { height: "0" },
         },
         float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' },
+          '0%, 100%': { 
+            transform: 'translateY(0) rotate(0deg)' 
+          },
+          '33%': { 
+            transform: 'translateY(-10px) rotate(2deg)' 
+          },
+          '66%': { 
+            transform: 'translateY(-5px) rotate(-1deg)' 
+          },
+        },
+        "fade-in": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(20px)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)"
+          }
+        },
+        "scale-in": {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.9)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1)"
+          }
         }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "float": "float 6s ease-in-out infinite",
+        "fade-in": "fade-in 0.6s ease-out",
+        "scale-in": "scale-in 0.4s ease-out",
       },
     },
   },

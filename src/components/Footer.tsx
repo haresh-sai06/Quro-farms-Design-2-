@@ -1,45 +1,103 @@
+
+import { Leaf, Phone, Mail, MapPin, Instagram, Facebook, Twitter } from "lucide-react";
+
 const Footer = () => {
   return (
-    <footer className="bg-primary text-white">
+    <footer className="bg-gradient-to-b from-green-900 to-green-800 text-white">
       <div className="container-padding py-16">
-        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Brand Section */}
+          <div className="col-span-1 md:col-span-2">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="bg-white p-2 rounded-xl">
+                <Leaf className="w-6 h-6 text-green-600" />
+              </div>
+              <span className="text-2xl font-bold">FarmFresh</span>
+            </div>
+            <p className="text-green-100 text-lg leading-relaxed mb-6 max-w-md">
+              Bringing you 100% original, chemical-free farm products directly from certified organic farms across India to your doorstep.
+            </p>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 text-green-100">
+                <Phone className="w-5 h-5 text-green-300" />
+                <span>+91 98765 43210</span>
+              </div>
+              <div className="flex items-center gap-3 text-green-100">
+                <Mail className="w-5 h-5 text-green-300" />
+                <span>hello@farmfresh.in</span>
+              </div>
+              <div className="flex items-center gap-3 text-green-100">
+                <MapPin className="w-5 h-5 text-green-300" />
+                <span>Delivering Pan India</span>
+              </div>
+            </div>
+          </div>
+          
+          {/* Quick Links */}
           <div>
-            <h3 className="font-semibold mb-4">Product</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">Features</a></li>
-              <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">Pricing</a></li>
-              <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">Security</a></li>
+            <h3 className="font-bold text-xl mb-6 text-white">Quick Links</h3>
+            <ul className="space-y-3">
+              <li><a href="#" className="text-green-100 hover:text-white transition-colors">About Us</a></li>
+              <li><a href="#products" className="text-green-100 hover:text-white transition-colors">Our Products</a></li>
+              <li><a href="#" className="text-green-100 hover:text-white transition-colors">Farming Process</a></li>
+              <li><a href="#" className="text-green-100 hover:text-white transition-colors">Delivery Info</a></li>
+              <li><a href="#testimonials" className="text-green-100 hover:text-white transition-colors">Customer Reviews</a></li>
             </ul>
           </div>
+          
+          {/* Support */}
           <div>
-            <h3 className="font-semibold mb-4">Company</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">About</a></li>
-              <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">Careers</a></li>
-              <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">Contact</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-semibold mb-4">Resources</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">Blog</a></li>
-              <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">Documentation</a></li>
-              <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">Support</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-semibold mb-4">Legal</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">Privacy</a></li>
-              <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">Terms</a></li>
-              <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">Cookies</a></li>
+            <h3 className="font-bold text-xl mb-6 text-white">Customer Care</h3>
+            <ul className="space-y-3">
+              <li><a href="#" className="text-green-100 hover:text-white transition-colors">Order Tracking</a></li>
+              <li><a href="#" className="text-green-100 hover:text-white transition-colors">Return Policy</a></li>
+              <li><a href="#" className="text-green-100 hover:text-white transition-colors">Help & Support</a></li>
+              <li><a href="#" className="text-green-100 hover:text-white transition-colors">FAQs</a></li>
+              <li><a href="#" className="text-green-100 hover:text-white transition-colors">Bulk Orders</a></li>
             </ul>
           </div>
         </div>
-        <div className="max-w-4xl mx-auto mt-12 pt-8 border-t border-neutral-800">
-          <p className="text-neutral-400 text-center">
-            © 2024 Monet. All rights reserved.
-          </p>
+        
+        {/* Newsletter Section */}
+        <div className="max-w-6xl mx-auto mt-12 pt-8 border-t border-green-700">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold mb-4">Stay Updated with Farm Fresh News</h3>
+            <p className="text-green-100 mb-6">Get the latest updates on seasonal produce, special offers, and farming tips.</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+              <input 
+                type="email" 
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 rounded-full text-primary bg-white border-0 focus:outline-none focus:ring-2 focus:ring-green-300"
+              />
+              <button className="bg-amber-500 text-white px-8 py-3 rounded-full hover:bg-amber-600 transition-colors font-semibold">
+                Subscribe
+              </button>
+            </div>
+          </div>
+          
+          {/* Social Links */}
+          <div className="flex justify-center gap-6 mb-8">
+            <a href="#" className="bg-green-700 p-3 rounded-full hover:bg-green-600 transition-colors">
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a href="#" className="bg-green-700 p-3 rounded-full hover:bg-green-600 transition-colors">
+              <Facebook className="w-5 h-5" />
+            </a>
+            <a href="#" className="bg-green-700 p-3 rounded-full hover:bg-green-600 transition-colors">
+              <Twitter className="w-5 h-5" />
+            </a>
+          </div>
+          
+          <div className="text-center text-green-200">
+            <p className="mb-2">
+              © 2024 FarmFresh. All rights reserved. | Made with ❤️ for healthy living
+            </p>
+            <p className="text-sm">
+              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a> • 
+              <a href="#" className="hover:text-white transition-colors ml-2">Terms of Service</a> • 
+              <a href="#" className="hover:text-white transition-colors ml-2">Organic Certification</a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
