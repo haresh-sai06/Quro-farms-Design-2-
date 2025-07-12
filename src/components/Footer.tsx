@@ -12,7 +12,7 @@ const Footer = () => {
               <div className="bg-white p-2 rounded-xl">
                 <Leaf className="w-6 h-6 text-green-600" />
               </div>
-              <span className="text-2xl font-bold">FarmFresh</span>
+              <span className="text-2xl font-bold">Quro Farms</span>
             </div>
             <p className="text-green-100 text-lg leading-relaxed mb-6 max-w-md">
               Bringing you 100% original, chemical-free farm products directly from certified organic farms across India to your doorstep.
@@ -24,7 +24,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3 text-green-100">
                 <Mail className="w-5 h-5 text-green-300" />
-                <span>hello@farmfresh.in</span>
+                <span>hello@qurofarms.in</span>
               </div>
               <div className="flex items-center gap-3 text-green-100">
                 <MapPin className="w-5 h-5 text-green-300" />
@@ -90,7 +90,7 @@ const Footer = () => {
           
           <div className="text-center text-green-200">
             <p className="mb-2">
-              © 2024 FarmFresh. All rights reserved. | Made with ❤️ for healthy living
+              © 2024 Quro Farms. All rights reserved. | Made with ❤️ for healthy living
             </p>
             <p className="text-sm">
               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a> • 
