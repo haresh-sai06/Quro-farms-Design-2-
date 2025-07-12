@@ -1,14 +1,11 @@
 import { motion, useAnimation, Variants } from "framer-motion";
 import { ArrowRight, Leaf } from "lucide-react";
 import { useEffect, useRef } from "react";
-import * as THREE from "three";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { useInView } from "react-intersection-observer";
 import gsap from "gsap";
 
 const Hero = () => {
   const badgeRef = useRef(null);
-  const canvasRef = useRef(null);
   const [ref, inView] = useInView({ threshold: 0.1 });
   const controls = useAnimation();
 
@@ -41,41 +38,6 @@ const Hero = () => {
         duration: 1,
         ease: "sine.inOut",
       });
-    }
-
-    if (canvasRef.current) {
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
-      camera.position.z = 5;
-
-      const renderer = new THREE.WebGLRenderer({
-        canvas: canvasRef.current,
-        alpha: true,
-      });
-      renderer.setSize(400, 400);
-
-      scene.add(new THREE.AmbientLight(0xffffff, 0.6));
-      const directionalLight = new THREE.DirectionalLight(0xffffff, 0.4);
-      directionalLight.position.set(0, 1, 1);
-      scene.add(directionalLight);
-
-      const loader = new GLTFLoader();
-      loader.load(
-        "https://threejs.org/examples/models/gltf/LeePerrySmith/LeePerrySmith.glb",
-        (gltf) => {
-          const model = gltf.scene;
-          model.scale.set(0.6, 0.6, 0.6);
-          model.position.y = -1;
-          scene.add(model);
-
-          const animate = () => {
-            requestAnimationFrame(animate);
-            model.rotation.y += 0.01;
-            renderer.render(scene, camera);
-          };
-          animate();
-        }
-      );
     }
 
     if (inView) controls.start("visible");
@@ -133,7 +95,7 @@ const Hero = () => {
           </motion.h1>
 
           <motion.p
-            className="text-xl md:text-2xl text-neutral-700 mb-8 max-w-lg leading-relaxed"
+            className="text-xl md:text-2xl bg-gradient-to-r from-green-500 via-yellow-400 to-orange-500 bg-clip-text text-transparent mb-8 max-w-lg leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{
               opacity: 1,
@@ -166,9 +128,10 @@ const Hero = () => {
         </div>
 
         <div className="md:w-1/2 flex justify-center relative">
-          <motion.canvas
-            ref={canvasRef}
-            className="w-[400px] h-[400px]"
+          <motion.img
+            src="/components/picture.jpeg"
+            alt="Vegetable Basket"
+            className="w-[400px] h-[400px] object-cover"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 0.9, y: 0 }}
             transition={{ duration: 1, delay: 1 }}
