@@ -2,6 +2,7 @@ import { motion, useAnimation, Variants } from "framer-motion";
 import { ArrowRight, Leaf } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
 
 const Hero = () => {
@@ -114,15 +115,19 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Shop Now
-              <ArrowRight className="w-5 h-5" />
+              <Link to="/products" className="flex items-center gap-3">
+                Shop Now
+                <ArrowRight className="w-5 h-5" />
+              </Link>
             </motion.button>
             <motion.button
               className="bg-white/80 backdrop-blur-sm text-green-700 px-8 py-4 rounded-full border-2 border-green-200 text-lg font-semibold"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Explore Products
+              <Link to="/products">
+                Explore Products
+              </Link>
             </motion.button>
           </div>
         </div>
